@@ -1,0 +1,240 @@
+
+.widget-list {
+  width: 800px;
+  margin: 0 auto;
+}
+.widget-list.overflow {
+  position: relative;
+  height: 500px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.widget {
+  position: relative;
+  border: 1px #ccc solid;
+  background: #eee;
+}
+.widget-counter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ccc;
+  font: 120px/1 Arial;
+}
+.widget-text {
+  line-height: 16px;
+  width: 120px;
+  text-align: left;
+  margin: 0 auto;
+}
+.once code {
+  color: #f40;
+}
+.loading {
+  border: 1px #f40 dashed;
+}
+.loading, .widget {
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  padding-top: 50px;
+  margin: 10px 0;
+}
+.op {
+  position: fixed;
+  top: 100px;
+  left: 10px;
+  padding: 10px;
+  width: 250px;
+  border: 1px #eee dotted;
+}
+.button-secondary {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: rgb(66, 184, 221); /* this is a light blue */
+}
+.quick-jump {
+  width: 800px;
+  margin: 0 auto;
+}
+.quick-jump > a {
+  display: inline-block;
+  font-size: 14px;
+  margin: 0 10px;
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+.overflow-wrapper h1 {
+  margin-left: 290px;
+}
+.top-link {
+  margin: 5px 0 20px;
+}
+.top-link a {
+  color: #333;
+  margin: 0 4px;
+}
+.image-container img {
+  display: block;
+  text-align: center;
+  margin: 20px 0;
+  height: 300px;
+  max-width: 100%;
+}
+code {
+  background: #eee;
+  padding: 2px 3px;
+  border-radius: 3px;
+  color: #333;
+  text-decoration: none;
+}
+.spinner {
+  margin: 0 auto;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner > div {
+  background-color: #999;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% {
+       transform: scaleY(1.0);
+       -webkit-transform: scaleY(1.0);
+     }
+}
+.placeholder {
+  background: #f8f8f8;
+  height: 200px;
+  margin: 10px 0;
+  padding-top: 80px;
+}
+
+.fade-appear {
+  opacity: 0.01;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+.outer{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  transform: rotate(65deg);
+  clip: rect(0px,100px,200px,0px);/* 这个clip属性用来绘制半圆，在clip的rect范围内的内容显示出来，使用clip属性，元素必须是absolute的 */
+  border-radius: 100px;
+  background: rgba(255, 255, 255, .3);
+  -webkit-animation: an1 2s infinite linear;
+}
+
+
+/*  .pie{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    transform: rotate(-65deg);
+    clip: rect(0px,100px,200px,0px);
+    border-radius: 100px;
+    background: rgba(255, 255, 255, .3);
+    -webkit-animation: an2 2s infinite linear;
+  }*/
+.my-img-layer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .3);
+}
+@-webkit-keyframes an1{
+  0% {transform: rotate(0deg);}
+  50%{transform: rotate(90deg);}
+  100%{transform: rotate(0deg);}
+}
+
+
+@-webkit-keyframes an2{
+  0% {transform: rotate(0deg);}
+  50%{transform: rotate(-90deg);}
+  100%{transform: rotate(0deg);}
+}
+.show-image-ctt{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,.3);
+}
+.show-image-ctt .display-img{
+  margin: 0;
+  width: 100%;
+  height: auto;
+}
+.loader-pic-ctt{
+  margin-top: 200px;
+  margin-left: 50%;
+  width: 40px;
+  height: 40px;;
+}
+.pie {
+  width:40px;
+  height:40px;
+  background: rgba(255, 255, 255, .8);
+  border-radius:20px;
+  position:absolute;
+}
+.pie1 { clip:rect(0px,40px,40px,20px); }
+.pie2 { clip:rect(0px,20px,40px,0px); }
+.hold {
+  width:40px; height:40px;
+  position:absolute;
+}
+.hold1 { clip:rect(0px,40px,40px,20px); }
+.hold2 { clip:rect(0px,20px,40px,0px); }
+ul,li{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

@@ -1,0 +1,7 @@
+{
+  "method": "GET",
+  "path": "/demo4",
+  "result": {
+    "key": "value"
+  }
+}

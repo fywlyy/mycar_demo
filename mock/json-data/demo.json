@@ -1,0 +1,16 @@
+{
+  "method": "GET",
+  "path": "/demo",
+  "result": {
+    "success": true,
+    "data": [
+      {
+        "id": "12345",
+        "name": "goudan"
+      },{
+        "id": "123456",
+        "name": "erya"
+      }
+    ]
+  }
+}

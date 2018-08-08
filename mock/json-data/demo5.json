@@ -1,0 +1,10 @@
+{
+  "method": "POST",
+  "path": "/demo5",
+  "template": {
+    "data|1-10": [{
+      "id|+1": 1,
+      "email": "@EMAIL"
+    }]
+  }
+}
