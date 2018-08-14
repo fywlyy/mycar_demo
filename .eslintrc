@@ -20,9 +20,13 @@
   },
   "parser": "babel-eslint",
   "rules": {
-    "indent": [2, 4],
+    "indent": [2, 4, {
+      "SwitchCase": 1
+    }],
     "react/jsx-indent": [2, 4],
     "react/jsx-indent-props": [2, 4],
+    "react/jsx-closing-tag-location": 1,
+    "react/jsx-closing-bracket-location": 1,
     "camelcase": 2,
     "curly": 2,
     "eqeqeq": 2,
@@ -32,12 +36,12 @@
     "no-param-reassign": 0,
     "prefer-spread": 2,
     "no-plusplus": 0,
-    "jsx-a11y/anchor-is-valid": [ "error", {
-      "components": [ "Link" ],
-      "specialLink": [ "to" ]
-    }],
+    "no-script-url": 0,
+    "jsx-a11y/anchor-is-valid": 0,
     "linebreak-style": 0,
-    "no-console": 0
+    "no-console": 0,
+    "arrow-body-style": 0,
+    "max-len": [2, 200]
   },
   "extends": "airbnb"
 }

@@ -1,61 +1,58 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Icon, Layout, Menu } from 'antd';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 
-import { IntlProvider, addLocaleData } from 'react-intl';
-import zh from 'react-intl/locale-data/zh';
-import en from 'react-intl/locale-data/en';
+const { SubMenu } = Menu;
+const { Header, Sider, Content } = Layout;
 
-import 'intl';
-import Layout from './layout';
-import Navigator from './nav';
 
-import zhDict from '../l18n/zh_CN';
-import enDict from '../l18n/en_US';
+const App = props => (
+    <Layout>
+        <Header className="haers-header" id="haersHeader">
+            <div className="haers-logo" />
+            <Menu
+                className="haers-platform-menu"
+                mode="horizontal"
+                defaultSelectedKeys={['1']}
+                style={{ lineHeight: '64px' }}
+            >
+                <Menu.Item key="1">B2B销售业务平台</Menu.Item>
+                <Menu.Item key="2">B2B订单交付控制台</Menu.Item>
+                <Menu.Item key="3">采购协同供应商平台</Menu.Item>
+            </Menu>
+        </Header>
+        <Layout>
+            <Sider className="haers-sider" width={180}>
+                <Menu
+                    mode="inline"
+                    className="haers-sider-menu"
+                    defaultSelectedKeys={['1']}
+                    defaultOpenKeys={['sub1']}
+                    style={{ height: '100%', borderRight: 0 }}
+                >
+                    <SubMenu key="sub1" title={<span><Icon type="user" />销售预测管理</span>}>
+                        <Menu.Item key="1">列表</Menu.Item>
+                        <Menu.Item key="2">计划提报</Menu.Item>
+                        <Menu.Item key="3">计划详情</Menu.Item>
+                        <Menu.Item key="4">调整确认</Menu.Item>
+                    </SubMenu>
+                </Menu>
 
-addLocaleData([...en, ...zh]);
+            </Sider>
+            <Content className="haers-page-content">
+                { props.children }
+            </Content>
+        </Layout>
+    </Layout>
+);
 
-class App extends Component {
-    static propTypes = {
-        children: PropTypes.element,
-    }
 
-    static defaultProps = {
-        children: null,
-    }
+App.propTypes = {
+    children: PropTypes.element,
+};
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            langStore: [enDict, zhDict],
-            langPrefix: ['en', 'zh'],
-        };
-    }
-
-    componentDidMount() {}
-
-    getLangIndex = () => {
-        const { langPrefix } = this.state;
-        const { language, userLanguage } = window.navigator;
-        return _.indexOf(langPrefix, (language || userLanguage).substr(0, 2));
-    }
-
-    render() {
-        const { langStore, langPrefix } = this.state;
-        const slangIndex = this.getLangIndex() || 0;
-
-        return (
-            <IntlProvider locale={langPrefix[slangIndex]} messages={langStore[slangIndex]}>
-                <Layout>
-                    <Navigator />
-                    <div className="content">
-                        { this.props.children }
-                    </div>
-                </Layout>
-            </IntlProvider>
-        );
-    }
-}
+App.defaultProps = {
+    children: null,
+};
 
 module.exports = App;

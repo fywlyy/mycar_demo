@@ -15,17 +15,21 @@ function getData(rootDir) {
         const item = fileNames[i];
         const filePath = path.join(rootDir, item);
         const stat = fs.statSync(filePath);
-        if (stat.isFile) {
+        if (stat.isFile()) {
             /* eslint no-continue: 0 */
             if (!(/.json$/.test(filePath))) continue;
             const jsonStr = fs.readFileSync(filePath);
             try {
                 const tempObj = JSON.parse(jsonStr);
-                result.push(tempObj);
+                if(Object.prototype.toString.call(tempObj) === '[object Array]') {
+                    result = result.concat(tempObj);
+                }else {
+                    result.push(tempObj);
+                }
             } catch (e) {
                 console.log(e);
             }
-        } else if (stat.isDirectory) {
+        } else if (stat.isDirectory()) {
             result = result.concat(getData(filePath));
         }
     }

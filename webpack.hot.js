@@ -37,7 +37,7 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     app: [
-      'webpack-hot-middleware/client?path=http://localhost:8083/__webpack_hmr',
+      'webpack-hot-middleware/client?path=http://localhost:12138/__webpack_hmr',
       'webpack/hot/only-dev-server',
       './src/entry'
     ],
@@ -54,7 +54,9 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /^node_modules$/,
         include: [APP_PATH],
-        use: ["react-hot-loader", "babel-loader"]
+        use: ["react-hot-loader", "babel-loader",
+            //"eslint-loader"
+        ]
       },
       {
         test: /\.s?css$/,
@@ -93,7 +95,7 @@ module.exports = {
   devServer:{
     contentBase:path.resolve(__dirname,"./"),
     host: '0.0.0.0',
-    port: 8083,
+    port: 12138,
     inline: true,
   }
 };

@@ -71,6 +71,7 @@
     "yarn": "^1.9.2"
   },
   "dependencies": {
+    "antd": "^3.8.0",
     "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.5",
     "es5-shim-sham": "0.0.1",
@@ -87,6 +88,7 @@
     "react-addons-css-transition-group": "^15.6.2",
     "react-addons-pure-render-mixin": "^15.6.2",
     "react-dom": "^15.0.1",
+    "react-highcharts": "^16.0.2",
     "react-intl": "^2.4.0",
     "react-lazyload": "^2.3.0",
     "react-redux": "^5.0.7",

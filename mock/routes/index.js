@@ -9,17 +9,19 @@ const router = express.Router()
 const Mock = require('mockjs');
 const jsonDataReader = require('../lib/jsonDataReader');
 
-router.use('/oms', require('./oms'));
 router.use('/db', require('./db-index'));
+router.use('/demo', require('./demo'));
+router.use('/stock', require('./stock'));
 
 let jsonDatas = jsonDataReader();
 router.all('*', (req, res, next) => {
     const { url, method } = req;
+    const reqPath = url && url.split('?')[0];
     let result;
     let matchMethod;
     for (let i = 0, len = jsonDatas.length; i < len; i++) {
         const item = jsonDatas[i];
-        if (item.path === url) {
+        if (item.path === reqPath) {
             /* eslint prefer-destructuring: 0 */
             if (item.template) {
                 result = Mock.mock(item.template);

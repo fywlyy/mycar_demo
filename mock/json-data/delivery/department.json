@@ -1,0 +1,13 @@
+{
+  "path": "/department",
+  "method": "GET",
+  "result": {
+    "success": true,
+    "data": [
+      {"id":"1","name":"dpt1"},
+      {"id":"2","name":"dpt2"},
+      {"id":"3","name":"dpt3"},
+      {"id":"4","name":"dpt4"}
+    ]
+  }
+}

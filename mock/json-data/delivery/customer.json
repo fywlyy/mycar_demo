@@ -1,0 +1,13 @@
+{
+  "path": "/customer",
+  "method": "GET",
+  "result": {
+    "success": true,
+    "data": [
+      {"id":"12312132","name":"goudan"},
+      {"id":"12312133","name":"abcd"},
+      {"id":"12312134","name":"hello"},
+      {"id":"123121355rewq","name":"world"}
+    ]
+  }
+}

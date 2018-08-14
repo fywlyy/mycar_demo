@@ -5,9 +5,9 @@ const initialState = {
 };
 export default function computer(state = initialState, action = {}) {
     switch (action.type) {
-    case ADD:
-        return Object.assign({}, state, { index: state.index + 1 });
-    default:
-        return state;
+        case ADD:
+            return Object.assign({}, state, { index: state.index + 1 });
+        default:
+            return state;
     }
 }

@@ -69,7 +69,7 @@ export function postJsonData(url, queryObj) {
             Authorization: token,
         },
     };
-    reqJson['Content-Type'] = 'application/json; charset=utf-8';
+    reqJson.headers['Content-Type'] = 'application/json; charset=utf-8';
     const myFetch = fetch(url, reqJson);
 
     return new Promise((resolve, reject) => {

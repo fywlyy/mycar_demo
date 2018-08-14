@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { Button } from 'antd';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { injectIntl, FormattedMessage } from "react-intl";
 /* eslint no-unused-vars: 0 */
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import './index.scss';
@@ -20,6 +22,7 @@ const mapPropsToAction = dispatch => ({
 });
 
 @connect(mapStateToProps, mapPropsToAction)
+@injectIntl
 class Computer extends Component {
     static propTypes = {
         hardDisk: PropTypes.shape({
@@ -36,9 +39,9 @@ class Computer extends Component {
 
     constructor(props) {
         super(props);
-        /* eslint comma-dangle: 0 */
+
         this.state = {
-            num: 0
+            num: 0,
         };
     }
 
@@ -77,10 +80,12 @@ class Computer extends Component {
         return (
             <div className="home-page">
                 <div className="container">
-                    <h2 className="home-title">Hot module reload</h2>
+                    <h2 className="home-title">
+                        <FormattedMessage id="home_title" />
+                    </h2>
                     <div className="home-block">
                         <input type="number" value={this.state.num} onChange={this.handleChange} />
-                        <button onClick={this.handleAdd}>增加</button>
+                        <Button type="primary" onClick={this.handleAdd}>增加</Button>
                         <button onClick={this.handleSubtract}>减少</button>
                         <button onClick={this.handleSyncAdd}>异步增加</button>
                         <button onClick={this.handleReset}>重置</button>

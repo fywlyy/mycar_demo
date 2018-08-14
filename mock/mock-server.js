@@ -44,7 +44,7 @@ app.use(function(err, req, res, next) {
 /**
  * Get port from environment and store in Express.
  */
-var port = process.argv[2] || 4000;
+var port = process.argv[2] || 54321;
 app.set('port', port);
 
 /**

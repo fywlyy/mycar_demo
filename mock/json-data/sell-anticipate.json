@@ -1,0 +1,81 @@
+[
+  {
+    "method": "GET",
+    "path": "/sell-anticipate/page",
+    "template": {
+      "success": true,
+      "message": null,
+      "result": {
+        "content|10": [
+          {
+            "id|+1": 1,
+            "__userName": "GHOLIHd",
+            "__man": "@EMAIL",
+            "__date": "@DATETIME"
+          }
+        ],
+        "totalElements": 32
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/sell-anticipate/district",
+    "template": {
+      "success": true,
+      "message": null,
+      "result": {
+        "content|3": [
+          {
+            "id|+1": 1,
+            "_name": "@WORD",
+            "_code|1-7": "@WORD",
+            "_unit": "@WORD",
+            "_amount|10-100": 10,
+            "_nn1|1-30": 1,
+            "_nn2|1-30": 1,
+            "_nn3|1-30": 1,
+            "deletable|1": false
+          }
+        ],
+        "totalElements": 7
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/district/list",
+    "template": {
+      "success": true,
+      "message": null,
+      "result": {
+        "content|4": [
+          {
+            "id|+1": 1,
+            "name|1-7": "汉字"
+          }
+        ],
+        "totalElements": 7
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/fuzzy-product/list",
+    "template": {
+      "success": true,
+      "message": null,
+      "result": {
+        "content|4": [
+          {
+            "id|+1": 1,
+            "name": "@WORD",
+            "unit": "@WORD",
+            "code|5": "@WORD"
+          }
+        ],
+        "totalElements": 4
+      }
+    }
+  }
+]

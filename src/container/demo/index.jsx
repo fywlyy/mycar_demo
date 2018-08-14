@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as demoAction from './demo-action';
+import contentTitle from '../component/content-title/ContentTitle';
 import './demo.scss';
 
 const mapStateToProps = state => ({
@@ -24,8 +25,8 @@ export default class Demo extends React.Component {
       }).isRequired,
       demoAction: PropTypes.shape({
           add: PropTypes.func,
-          omsPager: PropTypes.func,
-          saveOms: PropTypes.func,
+          demoPager: PropTypes.func,
+          demoSave: PropTypes.func,
       }).isRequired,
   }
   constructor(props) {
@@ -34,8 +35,8 @@ export default class Demo extends React.Component {
       this.handleAdd = this.handleAdd.bind(this);
   }
   componentDidMount() {
-      this.props.demoAction.omsPager({ name: 'getName' });
-      this.props.demoAction.saveOms({ name: 'postName' });
+      this.props.demoAction.demoPager({ name: 'getName' });
+      this.props.demoAction.demoSave({ name: 'postName' });
   }
   handleAdd() {
       this.props.demoAction.add();
@@ -48,6 +49,7 @@ export default class Demo extends React.Component {
       } = this.props;
       return (
           <div className="demo">
+              {contentTitle([{ to: '/new-delivery-order', text: 'NEW DELIVERY ORDER' }])}
               <button onClick={this.handleAdd}>add</button>
                 hello world{index}
           </div>

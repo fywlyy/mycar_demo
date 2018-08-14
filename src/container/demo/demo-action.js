@@ -11,6 +11,9 @@ export function add() {
 export function a(x, y) {
     return x + y;
 }
+export function subtraction(x, y) {
+    return x - y;
+}
 export function fetchData(cbk) {
     setTimeout(() => {
         cbk(2);
@@ -24,14 +27,14 @@ export function fetchData2() {
     });
 }
 // 测试mock的get请求
-export function omsPager(params) {
-    return () => getData(Api.omsPager, { ...params }).then((res) => {
+export function demoPager(params) {
+    return () => getData(Api.demoPager, { ...params }).then((res) => {
         console.log(res, 'res');
     });
 }
 // 测试mock的post请求
-export function saveOms(params) {
-    return () => postJsonData(Api.saveOms, { ...params }).then((res) => {
+export function demoSave(params) {
+    return () => postJsonData(Api.demoSave, { ...params }).then((res) => {
         console.log(res, 'res');
     });
 }

@@ -7,6 +7,24 @@ const baseUrl = '';
 export default {
     login: `${baseUrl}/ks-bpm/user/login`,
     logout: `${baseUrl}/ks-bpm/user/logout`,
-    omsPager: `${baseUrl}/oms/pager`, // test post api
-    saveOms: `${baseUrl}/oms/add`, // test get api
+    queryCustomerList: `${baseUrl}/customer`,
+    queryDepartmentList: `${baseUrl}/department`,
+    queryBusinessPersonalList: `${baseUrl}/personal`,
+    queryOrderList: `${baseUrl}/order`,
+    // mock demo api
+    demoPager: `${baseUrl}/demo/pager`,
+    demoSave: `${baseUrl}/demo/add`,
+    // stock manage
+    stockListPager: `${baseUrl}/stock/pager`,
+
+    // sell-anticipate
+    querySellAnticipateList: `${baseUrl}/sell-anticipate/page`,
+    deleteSellAnticipate: `${baseUrl}/sell-anticipate/delete`,
+    querySellAnticipateListByDistrict: `${baseUrl}/sell-anticipate/district`,
+    queryDistrictList: `${baseUrl}/district/list`,
+    queryFuzzyProductList: `${baseUrl}/fuzzy-product/list`,
+
+    // return
+    queryReturnFormLsit: `${baseUrl}/return-form/page`,
+    queryReturnResultLsit: `${baseUrl}/return-result/page`,
 };

@@ -15,7 +15,7 @@ figcaption, footer, header, menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
   padding: 0;
-  font-size: 100%;
+  //font-size: 100%;
   outline: 0 none;
   box-sizing: border-box;
   user-select: none;
@@ -41,11 +41,51 @@ ul {
 }
 
 .container {
+  /*
   margin: 0 auto;
   width: $container-with;
+  */
 }
 
 /*for layout*/
-.content-wrapper {
+.haers-header {
+  padding: 0 30px!important;
+  background-color: $color-main!important;
 
+  .haers-logo {
+    float: left;
+    width: 180px;
+    height: inherit;
+
+    background: url("../img/logo.png") no-repeat 0 50%;
+    background-size: 130px 25px;;
+  }
+
+  .haers-platform-menu {
+    background: $color-main!important;
+
+    .ant-menu-item {
+      color: $color-vice;
+
+      &.ant-menu-item-selected {
+        color: $color-initial-white;
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.haers-sider {
+  padding-top: 5px;
+  background-color: $color-side-bg!important;
+
+  .haers-sider-menu {
+    background-color: $color-side-bg!important;
+  }
+}
+
+.haers-page-content {
+  padding: 24px;
+
+  background-color: $color-initial-white;
 }
